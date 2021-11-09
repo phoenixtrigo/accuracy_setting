@@ -32,7 +32,7 @@ public class AccuracySettingPlugin implements MethodCallHandler {
 
     switch (call.method){
       case "getAccuracySetting":
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
           try {
             int mode = Settings.Secure.getInt(registrar.context().getContentResolver(), Settings.Secure.LOCATION_MODE);
             result.success(mode);
